@@ -1,0 +1,32 @@
+{
+    "name" : "cachedns",
+    "description" : "Caching of DNS functions.",
+    "version" : "0.1.0",
+    "author" : "Trevor Livingston <tlivings@gmail.com>",
+    "contributors" : [],
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/tlivings/cachedns.git"
+    },
+    "bugs" : "http://github.com/tlivings/cachedns/issues",
+    "publishConfig" : {
+        "registry" : "https://registry.npmjs.org"
+    },
+    "engines" : {
+        "node" : "~0.10.22"
+    },
+    "dependencies": {
+        "babel-runtime": "^4.3.0"
+    },
+    "devDependencies": {
+        "tape" : "^3.5.0",
+        "babel": "^4.3.0",
+        "glob": "^4.4.1"
+    },
+    "scripts" : {
+        "prepublish": "npm run compile",
+        "test": "npm run compile && babel-node test/harness.js test/**/*.js",
+        "compile": "babel --optional selfContained --modules common --out-dir dist lib/**.js"
+    },
+    "main": "./dist/lib/index"
+}
