@@ -3,6 +3,7 @@
   "description": "Caching of DNS functions.",
   "version": "1.0.0",
   "author": "Trevor Livingston <tlivings@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/tlivings/cachedns.git"
