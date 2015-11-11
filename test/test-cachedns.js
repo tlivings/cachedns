@@ -35,4 +35,22 @@ Test.only('cachedns', (t) => {
         });
     });
 
+    t.test('resolve', (t) => {
+        t.plan(3);
+
+        dns.resolve('google.com', 'A', (error, addresses) => {
+            t.ok(!error, 'no error.');
+            t.ok(addresses, 'found results.');
+            t.ok(dns._cache.search('resolve_google.com_A'), 'in cache.');
+        });
+    });
+
+    t.test('error', (t) => {
+        t.plan(1);
+
+        dns.lookup('!!!', (error, addresses) => {
+            t.ok(error, 'error.');
+        });
+    });
+
 });
