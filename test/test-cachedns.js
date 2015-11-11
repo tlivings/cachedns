@@ -1,11 +1,11 @@
 'use strict';
 
 import Test from 'tape';
-import cachedns from '../lib';
+import Cachedns from '../lib';
 
 Test.only('cachedns', (t) => {
 
-    let dns = cachedns();
+    let dns = Cachedns();
 
     t.test('lookup', (t) => {
         t.plan(7);
