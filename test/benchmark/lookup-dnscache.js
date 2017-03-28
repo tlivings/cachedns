@@ -1,17 +1,19 @@
 'use strict';
 
 const Hammer = require('hammertime');
-const Dns = require('dns');
+const Dnscache = require('dnscache');
+
+const dns = Dnscache({ ttl: 300, enable: true });
 
 Hammer({
     iterations: 10000,
     after: (result) => {
-        console.log('dns');
+        console.log('dnscache');
         console.log(result);
     }
 }).
 time((next) => {
-    Dns.lookup('localhost', (error, addresses) => {
+    dns.lookup('localhost', (error, addresses) => {
         if (error) {
             throw error;
         }

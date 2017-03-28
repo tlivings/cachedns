@@ -1,7 +1,7 @@
 {
   "name": "cachedns",
   "description": "Caching of DNS functions.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Trevor Livingston <tlivings@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -16,6 +16,7 @@
     "node": ">=6.0.0"
   },
   "devDependencies": {
+    "dnscache": "^1.0.1",
     "eslint": "^3.18.0",
     "hammertime": "^0.1.4",
     "istanbul": "^0.4.5",
@@ -25,7 +26,7 @@
     "test": "tape test/*.js",
     "cover": "istanbul cover tape -- test/*.js",
     "lint": "eslint lib",
-    "bench": "node test/benchmark/lookup"
+    "bench": "node test/benchmark/lookup && node test/benchmark/lookup-dnscache && node test/benchmark/lookup-cachedns"
   },
   "main": "./lib/index"
 }

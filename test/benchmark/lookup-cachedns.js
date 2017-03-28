@@ -1,17 +1,19 @@
 'use strict';
 
 const Hammer = require('hammertime');
-const Dns = require('dns');
+const Cachedns = require('../../lib');
+
+const dns = Cachedns({ ttl: 300 });
 
 Hammer({
     iterations: 10000,
     after: (result) => {
-        console.log('dns');
+        console.log('cachedns');
         console.log(result);
     }
 }).
 time((next) => {
-    Dns.lookup('localhost', (error, addresses) => {
+    dns.lookup('localhost', (error, addresses) => {
         if (error) {
             throw error;
         }
