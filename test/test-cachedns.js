@@ -1,9 +1,9 @@
 'use strict';
 
-import Test from 'tape';
-import Cachedns from '../lib';
+const Test = require('tape');
+const Cachedns = require('../lib');
 
-Test.only('cachedns', (t) => {
+Test('cachedns', (t) => {
 
     let dns = Cachedns();
 

@@ -1,10 +1,10 @@
 'use strict';
 
-import Hammer from 'hammertime';
-import Cachdns from '../../lib';
-//import Dns from 'dns';
+const Hammer = require('hammertime');
+const Cachedns = require('../../lib');
 
-let dns = Cachdns({ ttl: 300 });
+const dns = Cachedns({ ttl: 300 });
+//const dns = require('dns');
 
 Hammer({
     iterations: 5000,
