@@ -24,7 +24,8 @@
   "scripts": {
     "test": "tape test/*.js",
     "cover": "istanbul cover tape -- test/*.js",
-    "lint": "eslint lib"
+    "lint": "eslint lib",
+    "bench": "node test/benchmark/lookup"
   },
   "main": "./lib/index"
 }
